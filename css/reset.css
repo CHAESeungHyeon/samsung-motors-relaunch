@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'samsung';
+  src: url(../font/samsungsharpsans-bold.otf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'samsung';
+  src: url(../font/samsungsharpsans-medium.otf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'samsung';
+  src: url(../font/samsungsharpsans.otf) format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Serif+KR:wght@200..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+  color: #111;
+  outline: 1px solid red;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+body{
+  font-family: 'samsung';
+  overflow-x: hidden;
+}
+
+button{
+border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+.container{
+  width: 1200px;
+  margin: auto;
+}
+main {
+  width: 100%;
+  margin: 74px auto 0 auto;
+}

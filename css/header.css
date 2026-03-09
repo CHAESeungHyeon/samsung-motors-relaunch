@@ -1,0 +1,41 @@
+header{
+  width: 100%;
+  max-width: 1920px;
+  height: 100px;
+  margin: auto;
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  display: flex;
+  background: #fff;
+}
+header .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo{
+  width: 200px;
+}
+.navbar{
+  display: flex;
+  gap: 465px;
+}
+.navbar .navbtn1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.navbar .navbtn2{
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.navbar .navbtn2 li,
+.search, .user
+{
+  display: block;
+  width: 20px;
+  height: 20px;
+}
