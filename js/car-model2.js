@@ -65,7 +65,7 @@
       track.classList.remove('no-anim');
     }
 
-    const gap    = perPage === 2 ? 62 : 0;
+    const gap    = perPage === 2 ? 30 : 0;
     const offset = -(current * (wrapper.offsetWidth + gap));
     track.style.transform = `translateX(${offset}px)`;
     updateDots();

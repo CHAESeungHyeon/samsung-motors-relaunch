@@ -10,7 +10,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* title 상단 / slogan 하단 */
   padding-top: 48px;
   padding-bottom: 80px;
 }
@@ -63,7 +62,6 @@
   cursor: pointer;
 }
 
-/* 첫번째 버튼 - 채움 */
 #topBanner .btn .reserve {
   background: #1a1a1a;
   color: #fff;
@@ -74,7 +72,6 @@
   background: #333;
 }
 
-/* 두번째 버튼 - 아웃라인 */
 #topBanner .btn .drive {
   background: transparent;
   color: #fff;
@@ -85,58 +82,59 @@
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* spec */
-#spec{
+/* =====================================================
+   spec
+===================================================== */
+#spec {
   width: 100%;
 }
-#spec .title{
-text-align: center;
-margin: 75px 0 193px;
-font-size: 35px;
+
+#spec .container {
+  width: 1100px;
 }
-#spec .spec-img{
+
+#spec .title {
+  text-align: center;
+  margin: 75px 0 100px;
+  font-size: 35px;
+  letter-spacing: 3%;
+}
+
+#spec .spec-img {
+  width: 900px;
   display: flex;
   flex-direction: column;
-  gap: 121px; 
+  margin: auto;
+  gap: 121px;
 }
 
-@media(max-width:1024px){#spec .title{margin: 65px 0 150px;}}
-@media(max-width:768px){#spec .title{margin: 55px 0 100px; font-size: 28px;}}
-@media(max-width:657px){#spec .title{margin: 45px 0 90px; font-size: 25px;}}
-@media(max-width:481px){#spec .title{margin: 35px 0 70px; font-size: 23px;}}
-@media(max-width:391px){#spec .title{margin: 35px 0 50px; font-size: 20px;}}
-
 /* =====================================================
-  전체 래퍼
+   전체 래퍼
 ===================================================== */
 .spec-txt {
   max-width: 1200px;
-  margin: 92px 0 160px;
-  padding: 0 40px;
+  margin: 92px auto 160px;
+  padding: 0;
 }
 
 /* =====================================================
-  SM5 타이틀
+   SM5 타이틀
 ===================================================== */
 .spec-txt .name {
+  text-align: center;
   font-size: 40px;
   font-weight: 700;
-  letter-spacing: -0.5px;
+  letter-spacing: 3%;
   margin-bottom: 36px;
-  padding-left: 40px;
 }
 
 /* =====================================================
-  슬라이더 구조
-  - 데스크탑 : 슬라이드 1장 = wrapper 50% - gap/2
-    → 2장이 나란히 보임, gap 62px
-  - 모바일   : 슬라이드 1장 = wrapper 100%
+   슬라이더 구조
 ===================================================== */
 .spec-slider-wrapper {
   overflow: hidden;
   cursor: grab;
   user-select: none;
-  /* 세로 스크롤은 브라우저에게 위임, 가로는 JS에서 preventDefault */
 }
 
 .spec-slider-wrapper.is-dragging {
@@ -145,8 +143,7 @@ font-size: 35px;
 
 .spec-slide-track {
   display: flex;
-  gap: 62px;
-  /* 데스크탑 컬럼 사이 62px */
+  gap: 30px;
   transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
   will-change: transform;
 }
@@ -155,31 +152,29 @@ font-size: 35px;
   transition: none;
 }
 
-/* 슬라이드 1장 : 데스크탑 → 50% - gap절반 */
 .spec-slide {
   flex-shrink: 0;
-  width: calc(50% - 31px);
-  /* (100% - 62px) / 2 */
+  width: calc(50% - 15px);
 }
 
 /* =====================================================
-  소제목 — 배경 #f5f5f5
+   소제목 — 배경 #f5f5f5
 ===================================================== */
 .spec-subtitle {
   font-size: 27px;
   font-weight: 500;
-  letter-spacing: -0.3px;
+  letter-spacing: 6%;
   background: #f5f5f5;
-  padding: 23px 20px 23px 40px;
+  padding: 23px 12px 23px 24px;
 }
 
 /* =====================================================
-  제원 항목 — 배경 #fff
+   제원 항목 — 배경 #fff
 ===================================================== */
 .spec-item {
   background: #fff;
   border-bottom: 1px solid #f0f0f0;
-  padding: 23px 20px 20px 40px;
+  padding: 23px 12px 20px 24px;
 }
 
 .spec-item:last-child {
@@ -191,16 +186,18 @@ font-size: 35px;
   font-weight: 500;
   color: #666;
   margin-bottom: 8px;
+  letter-spacing: 6%;
 }
 
 .spec-value {
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 1.4;
+  letter-spacing: 6%;
 }
 
 /* =====================================================
-  도트 버튼
+   도트 버튼
 ===================================================== */
 .spec-dots {
   display: flex;
@@ -228,106 +225,12 @@ font-size: 35px;
 }
 
 /* =====================================================
-   미디어 쿼리 — 태블릿 (≤1024px)
+   서비스 카드 섹션
 ===================================================== */
-@media (max-width: 1024px) {
-  .spec-txt {
-    padding: 0 24px;
-  }
-
-  .spec-txt .name {
-    font-size: 34px;
-    padding-left: 24px;
-  }
-
-  .spec-subtitle {
-    font-size: 22px;
-    padding: 18px 16px 18px 24px;
-  }
-
-  .spec-item {
-    padding: 18px 16px 16px 24px;
-  }
-
-  .spec-value {
-    font-size: 20px;
-  }
-}
-
-/* =====================================================
-  미디어 쿼리 — 모바일 (≤768px)
-  슬라이드 1개씩 표시, gap 제거
-===================================================== */
-@media (max-width: 768px) {
-  .spec-txt {
-    padding: 0 16px;
-    margin: 40px auto;
-  }
-
-  .spec-txt .name {
-    font-size: 30px;
-    padding-left: 16px;
-    margin-bottom: 24px;
-  }
-
-  /* 슬라이드 1장 = 100% */
-  .spec-slide {
-    width: 100%;
-  }
-
-  /* gap 제거 (1장씩이라 불필요) */
-  .spec-slide-track {
-    gap: 0;
-  }
-
-  .spec-subtitle {
-    font-size: 20px;
-    padding: 16px 12px 16px 16px;
-  }
-
-  .spec-item {
-    padding: 16px 12px 14px 16px;
-  }
-
-  .spec-label {
-    font-size: 14px;
-  }
-
-  .spec-value {
-    font-size: 18px;
-  }
-}
-
-/* =====================================================
-   미디어 쿼리 — 소형 모바일 (≤481px)
-===================================================== */
-@media (max-width: 481px) {
-  .spec-txt .name {
-    font-size: 26px;
-  }
-
-  .spec-subtitle {
-    font-size: 18px;
-  }
-
-  .spec-value {
-    font-size: 16px;
-  }
-
-  .spec-label {
-    font-size: 13px;
-  }
-}
-
-
-/* ==============================
-서비스 카드 섹션
-    ============================== */
 #service-cards {
   margin-bottom: 160px;
 }
 
-/* ✅ 4열 grid */
 .service-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -344,7 +247,6 @@ font-size: 35px;
   justify-content: space-between;
   min-height: 180px;
 }
-
 
 .service-icon-placeholder {
   width: 20px;
@@ -372,293 +274,133 @@ font-size: 35px;
 }
 
 
-
-/* ── 반응형 ── */
+/* =====================================================
+   미디어 쿼리
+===================================================== */
 
 @media (max-width: 1200px) {
-  #topBanner {
-    height: 75vh;
-  }
-
-  #topBanner .container {
-    padding: 40px 20px;
-    padding-bottom: 70px;
-  }
-
-  #topBanner .title img {
-    width: 140px;
-  }
-
-  #topBanner .naming {
-    font-size: 56px;
-  }
-
-  #topBanner .slogan h3 {
-    font-size: 38px;
-  }
-
-  #topBanner .btn a {
-    padding: 13px 30px;
-    font-size: 15px;
-  }
+  /* ── topBanner ── */
+  #topBanner { height: 75vh; }
+  #topBanner .container { padding: 40px 20px; padding-bottom: 70px; }
+  #topBanner .title img { width: 140px; }
+  #topBanner .naming { font-size: 56px; }
+  #topBanner .slogan h3 { font-size: 38px; }
+  #topBanner .btn a { padding: 13px 30px; font-size: 15px; }
 }
 
 @media (max-width: 1024px) {
-  #topBanner {
-    height: 65vh;
-  }
+  /* ── topBanner ── */
+  #topBanner { height: 65vh; }
+  #topBanner .container { padding: 20px; padding-bottom: 60px; }
+  #topBanner .title img { width: 130px; }
+  #topBanner .naming { font-size: 48px; }
+  #topBanner .slogan h3 { font-size: 32px; }
+  #topBanner .btn a { padding: 12px 30px; font-size: 14px; }
 
-  #topBanner .container {
-    padding: 20px;
-    padding-bottom: 60px;
-  }
+  /* ── spec ── */
+  #spec .title { margin: 65px 0 150px; }
+  .spec-txt { padding: 0; }
+  .spec-txt .name { font-size: 34px; }
+  .spec-subtitle { font-size: 22px; padding: 18px 16px 18px 24px; }
+  .spec-item { padding: 18px 16px 16px 24px; }
+  .spec-label { font-size: 14px; }
+  .spec-value { font-size: 18px; }
 
-  #topBanner .title img {
-    width: 130px;
-  }
-
-  #topBanner .naming {
-    font-size: 48px;
-  }
-
-  #topBanner .slogan h3 {
-    font-size: 32px;
-  }
-
-  #topBanner .btn a {
-    padding: 12px 30px;
-    font-size: 14px;
-  }
-
-  /* .service-grid */
-
-  .service-grid {
-    grid-template-columns: repeat(2, 1fr);
-    /* 4열 → 2열 */
-    gap: 16px;
-  }
-
-  .service-card {
-    padding: 28px 32px 18px 28px;
-    min-height: 160px;
-  }
-
-  .service-title {
-    font-size: 16px;
-  }
-
-  .service-link {
-    font-size: 16px;
-    margin-top: 60px;
-  }
+  /* ── 서비스 카드 ── */
+  .service-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .service-card { padding: 28px 32px 18px 28px; min-height: 160px; }
+  .service-title { font-size: 16px; }
+  .service-link { font-size: 16px; margin-top: 60px; }
 }
 
 @media (max-width: 768px) {
-  main {
-    padding: 70px 0;
-  }
+  main { padding: 70px 0; }
 
-  #topBanner {
-    height: 55vh;
-  }
+  /* ── topBanner ── */
+  #topBanner { height: 55vh; }
+  #topBanner .container { padding: 24px 20px; padding-bottom: 48px; }
+  #topBanner .title img { width: 110px; }
+  #topBanner .naming { font-size: 38px; }
+  #topBanner .slogan { gap: 18px; }
+  #topBanner .slogan h3 { font-size: 26px; letter-spacing: 3px; }
+  #topBanner .btn a { padding: 12px 24px; font-size: 14px; }
 
-  #topBanner .container {
-    padding: 24px 20px;
-    padding-bottom: 48px;
-  }
+  /* ── spec ── */
+  #spec .title { margin: 55px 0 100px; font-size: 28px; }
+  .spec-txt { padding: 0 16px; margin: 40px auto; }
+  .spec-txt .name { font-size: 30px; margin-bottom: 24px; }
+  .spec-slide { width: 100%; }
+  .spec-slide-track { gap: 0; }
+  .spec-subtitle { font-size: 20px; padding: 16px 12px 16px 16px; }
+  .spec-item { padding: 16px 12px 14px 16px; }
+  .spec-label { font-size: 13px; }
+  .spec-value { font-size: 16px; }
 
-  #topBanner .title img {
-    width: 110px;
-  }
-
-  #topBanner .naming {
-    font-size: 38px;
-  }
-
-  #topBanner .slogan {
-    gap: 18px;
-  }
-
-  #topBanner .slogan h3 {
-    font-size: 26px;
-    letter-spacing: 3px;
-  }
-
-  #topBanner .btn a {
-    padding: 12px 24px;
-    font-size: 14px;
-  }
-
-  /* .service-grid */
-
-  .service-grid {
-    grid-template-columns: repeat(2, 1fr);
-    /* 2열 유지 */
-    gap: 14px;
-  }
-
-  .service-card {
-    padding: 24px 24px 16px 24px;
-    min-height: 140px;
-  }
-
-  .service-title {
-    font-size: 15px;
-  }
-
-  .service-link {
-    font-size: 15px;
-    margin-top: 40px;
-  }
+  /* ── 서비스 카드 ── */
+  .service-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .service-card { padding: 24px 24px 16px 24px; min-height: 140px; }
+  .service-title { font-size: 15px; }
+  .service-link { font-size: 15px; margin-top: 40px; }
 }
 
 @media (max-width: 657px) {
-  main {
-    padding: 70px 0;
-  }
+  main { padding: 70px 0; }
 
-  #topBanner {
-    height: 45vh;
-  }
+  /* ── topBanner ── */
+  #topBanner { height: 45vh; }
+  #topBanner .container { padding: 20px 16px; padding-bottom: 36px; }
+  #topBanner .title img { width: 90px; }
+  #topBanner .naming { font-size: 32px; }
+  #topBanner .slogan { gap: 14px; }
+  #topBanner .slogan h3 { font-size: 22px; letter-spacing: 2px; }
+  #topBanner .btn a { padding: 10px 20px; font-size: 13px; }
 
-  #topBanner .container {
-    padding: 20px 16px;
-    padding-bottom: 36px;
-  }
-
-  #topBanner .title img {
-    width: 90px;
-  }
-
-  #topBanner .naming {
-    font-size: 32px;
-  }
-
-  #topBanner .slogan {
-    gap: 14px;
-  }
-
-  #topBanner .slogan h3 {
-    font-size: 22px;
-    letter-spacing: 2px;
-  }
-
-  #topBanner .btn a {
-    padding: 10px 20px;
-    font-size: 13px;
-  }
+  /* ── spec ── */
+  #spec .title { margin: 45px 0 90px; font-size: 25px; }
 }
 
 @media (max-width: 481px) {
-  main {
-    padding: 70px 0;
-  }
+  main { padding: 70px 0; }
 
-  #topBanner {
-    height: 35vh;
-  }
+  /* ── topBanner ── */
+  #topBanner { height: 35vh; }
+  #topBanner .container { padding: 16px; padding-bottom: 8px; }
+  #topBanner .title { gap: 12px; }
+  #topBanner .title img { width: 70px; }
+  #topBanner .naming { font-size: 20px; }
+  #topBanner .slogan { gap: 8px; }
+  #topBanner .slogan h3 { font-size: 15px; letter-spacing: 1px; }
+  #topBanner .btn { gap: 10px; }
+  #topBanner .btn a { padding: 8px 14px; font-size: 9px; }
 
-  #topBanner .container {
-    padding: 16px;
-    padding-bottom: 8px;
-  }
+  /* ── spec ── */
+  #spec .title { margin: 35px 0 70px; font-size: 23px; }
+  .spec-txt .name { font-size: 26px; }
+  .spec-subtitle { font-size: 18px; }
+  .spec-value { font-size: 16px; }
+  .spec-label { font-size: 13px; }
 
-  #topBanner .title {
-    gap: 12px;
-  }
-
-  #topBanner .title img {
-    width: 70px;
-  }
-
-  #topBanner .naming {
-    font-size: 20px;
-  }
-
-  #topBanner .slogan {
-    gap: 8px;
-  }
-
-  #topBanner .slogan h3 {
-    font-size: 15px;
-    letter-spacing: 1px;
-  }
-
-  #topBanner .btn {
-    gap: 10px;
-  }
-
-  #topBanner .btn a {
-    padding: 8px 14px;
-    font-size: 9px;
-  }
-
-  /* .service-grid */
-
-  .service-grid {
-    grid-template-columns: 1fr;
-    /* 2열 → 1열 */
-    gap: 12px;
-  }
-
-  .service-card {
-    padding: 20px 20px 14px 20px;
-    min-height: 120px;
-  }
-
-  .service-title {
-    font-size: 14px;
-  }
-
-  .service-link {
-    font-size: 14px;
-    margin-top: 28px;
-  }
-
+  /* ── 서비스 카드 ── */
+  .service-grid { grid-template-columns: 1fr; gap: 12px; }
+  .service-card { padding: 20px 20px 14px 20px; min-height: 120px; }
+  .service-title { font-size: 14px; }
+  .service-link { font-size: 14px; margin-top: 28px; }
 }
 
 @media (max-width: 391px) {
-  main {
-    padding: 70px 0;
-  }
+  main { padding: 70px 0; }
 
-  #topBanner {
-    height: 25vh;
-  }
+  /* ── topBanner ── */
+  #topBanner { height: 25vh; }
+  #topBanner .container { padding: 12px; padding-bottom: 5px; }
+  #topBanner .title { gap: 10px; }
+  #topBanner .title img { width: 60px; }
+  #topBanner .naming { font-size: 18px; }
+  #topBanner .slogan { gap: 5px; }
+  #topBanner .slogan h3 { font-size: 13px; }
+  #topBanner .btn { gap: 8px; }
+  #topBanner .btn a { padding: 6px 10px; font-size: 7px; border-radius: 3px; }
 
-  #topBanner .container {
-    padding: 12px;
-    padding-bottom: 5px;
-  }
-
-  #topBanner .title {
-    gap: 10px;
-  }
-
-  #topBanner .title img {
-    width: 60px;
-  }
-
-  #topBanner .naming {
-    font-size: 18px;
-  }
-
-  #topBanner .slogan {
-    gap: 5px;
-  }
-
-  #topBanner .slogan h3 {
-    font-size: 13px;
-  }
-
-  #topBanner .btn {
-    gap: 8px;
-  }
-
-  #topBanner .btn a {
-    padding: 6px 10px;
-    font-size: 7px;
-    border-radius: 3px;
-  }
-
+  /* ── spec ── */
+  #spec .title { margin: 35px 0 50px; font-size: 20px; }
 }
