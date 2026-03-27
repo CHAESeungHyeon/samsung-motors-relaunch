@@ -3,19 +3,21 @@
 ## 📌 프로젝트 소개
 
 기존 자동차 브랜드 사이트를 분석하여 사용자 경험을 개선하고,
-브랜드 아이덴티티를 강화하는 방향으로 리디자인한 프로젝트입니다.
+브랜드 아이덴티티를 강화하는 방향으로 리브랜딩 기획 프로젝트입니다.
 
 ---
 
 ## 🖥️ 미리보기
 
-(메인 화면 이미지 또는 GIF 삽입)
+![banner](samsung-motors-sm5.gif.gif)
 
 ---
 
 ## ⚙️ 사용 기술
 
+* Figma / Photoshop
 * HTML / CSS / JavaScript
+* Claude / Gemini / Chat-GPT
 * 반응형 웹 (Responsive Web)
 
 ---
