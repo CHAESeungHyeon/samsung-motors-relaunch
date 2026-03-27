@@ -9,7 +9,7 @@
 
 ## 🖥️ 미리보기
 
-![banner](samsung-motors-sm5.gif.gif)
+![banner](https://raw.githubusercontent.com/CHAESeungHyeon/samsung-motors-redesign/main/img/samsung-motors-sm5.gif)
 
 ---
 
