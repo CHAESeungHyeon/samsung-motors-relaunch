@@ -30,17 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(step);
   }
 
-  // 오버레이 초기화 (19% 지점으로 리셋)
+  // 오버레이 초기화 (20% 지점으로 리셋)
   function resetOverlays() {
     overlayLeft.style.transition  = 'none';
     overlayRight.style.transition = 'none';
-    overlayLeft.style.clipPath    = 'inset(0 81% 0 19%)'; // 19% 지점에서 숨김
-    overlayRight.style.clipPath   = 'inset(0 81% 0 19%)'; // 19% 지점에서 숨김
+    overlayLeft.style.clipPath    = 'inset(0 80% 0 20%)'; // 20% 지점에서 숨김
+    overlayRight.style.clipPath   = 'inset(0 80% 0 20%)'; // 20% 지점에서 숨김
     overlayLeft.getBoundingClientRect(); // reflow
   }
 
   // ── 순방향: 1998 → 2028 ──
-  // 19% 지점에서 왼쪽(→0%)과 오른쪽(→100%)으로 동시에 열림
+  // 20% 지점에서 왼쪽(→0%)과 오른쪽(→100%)으로 동시에 열림
   function forwardTransition() {
     clearAllTimers();
     resetOverlays();
@@ -51,16 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
     addTimer(() => {
       overlayLeft.style.transition  = 'clip-path 1s ease-in';
       overlayRight.style.transition = 'clip-path 5s ease-in';
-      overlayLeft.style.clipPath    = 'inset(0 81% 0 0%)';  // 왼쪽으로 빠르게
-      overlayRight.style.clipPath   = 'inset(0 81% 0 19%)'; // 오른쪽으로 빠르게
+      overlayLeft.style.clipPath    = 'inset(0 80% 0 0%)';  // 왼쪽으로 빠르게
+      overlayRight.style.clipPath   = 'inset(0 80% 0 20%)'; // 오른쪽으로 빠르게
     }, 0);
 
     // Stage 2: 2초 대기 후 나머지 천천히 열림 (5초)
     addTimer(() => {
       overlayLeft.style.transition  = 'clip-path 5s ease-out';
       overlayRight.style.transition = 'clip-path 5s ease-out';
-      overlayLeft.style.clipPath    = 'inset(0 81% 0 0%)';  // 왼쪽 끝까지
-      overlayRight.style.clipPath   = 'inset(0 0% 0 19%)';  // 오른쪽 끝까지
+      overlayLeft.style.clipPath    = 'inset(0 80% 0 0%)';  // 왼쪽 끝까지
+      overlayRight.style.clipPath   = 'inset(0 0% 0 20%)';  // 오른쪽 끝까지
     }, 3000);
 
     // 완료 후 로고 & 영문 텍스트 등장
@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ── 역방향: 2028 → 1998 ──
-  // 라이트(overlayLeft) : 0% → 19% 로 오른쪽으로 물러나며 숨김 (기존 동일)
-  // 신차(overlayRight)  : 18% → 100% 로 왼→오 방향으로 빠져나가며 배경 등장
+  // 라이트(overlayLeft) : 0% → 20% 로 오른쪽으로 물러나며 숨김 (기존 동일)
+  // 신차(overlayRight)  : 20% → 100% 로 왼→오 방향으로 빠져나가며 배경 등장
   function reverseTransition() {
     clearAllTimers();
 
@@ -83,17 +83,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     countLinear(2028, 1998, 5000, yearEl);
 
-    // Stage 1: 라이트(overlayLeft) 0% → 19% 로 먼저 물러남
+    // Stage 1: 라이트(overlayLeft) 0% → 20% 로 먼저 물러남
     addTimer(() => {
       overlayLeft.style.transition = 'clip-path 1s ease-in';
-      overlayLeft.style.clipPath   = 'inset(0 81% 0 19%)'; // 0% → 19% (오른쪽으로 숨김)
+      overlayLeft.style.clipPath   = 'inset(0 80% 0 20%)'; // 0% → 20% (오른쪽으로 숨김)
     }, 0);
 
-    // Stage 2: 신차(overlayRight) 18% → 100% 로 왼→오 방향으로 빠져나감
-    //          left inset이 18% → 100% 로 커지면서 오른쪽으로 사라짐 = 배경 드러남
+    // Stage 2: 신차(overlayRight) 20% → 100% 로 왼→오 방향으로 빠져나감
+    //          left inset이 20% → 100% 로 커지면서 오른쪽으로 사라짐 = 배경 드러남
     addTimer(() => {
       overlayRight.style.transition = 'clip-path 5s ease-out';
-      overlayRight.style.clipPath   = 'inset(0 0% 0 100%)'; // 18% → 100% (왼→오 퇴장)
+      overlayRight.style.clipPath   = 'inset(0 0% 0 100%)'; // 20% → 100% (왼→오 퇴장)
     }, 3000);
 
     loopTimer = setTimeout(() => forwardTransition(), 14000);
