@@ -111,7 +111,7 @@
   background: #efefef;
 }
 #model-imgs .img-box1{
-  margin: 86px 0 75px;
+  margin: 86px 0 100px;
 }
 #model-imgs .box-txt1{
   width: 747px;
@@ -147,7 +147,7 @@
 /* interier========================= */
 
 #interier{
-  margin: 310px 0 144px;
+  margin: 200px 0;
   background: url(../imgs/model-img/interier.png) no-repeat center/cover;
   height: 135vh;
 }
@@ -172,12 +172,12 @@ width: 100%;
   font-weight: 300;
 }
 #function .function-txt p{
-  font-size: 20px;
+  font-size: 18px;
   color: #999;
   margin-top: 30px;
 }
 #function .function-card2{
-  margin: 110px 0 300px;
+  margin: 110px 0 200px;
 }
 
 /* bot-banner============ */

@@ -1,71 +1,201 @@
 /* footer */
-#footer{
+#footer {
   width: 100%;
 }
-#footer .container{
-  width: 1200px;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+
+#footer .container {
+  padding: 30px 10px;
 }
-#footer .container .top_foot{
-  width: 100%;
+
+/* ─── 상단: 회사 정보 ─── */
+#footer .footer_info {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   padding: 26px 0;
-  font-size: 11px;
-  line-height: 2.5;
-  letter-spacing: -1px;
-  /* white-space: nowrap; */
-  font-weight: 500;
-  flex: 1;
 }
-#footer .container .top_foot p{color: #666;}
-#footer .container .middle_foot p{color: #666;}
 
-#footer .container .middle_foot{
-  width: 100%;
-  font-size: 11px;
-  padding: 26px 0;
-  border-bottom: 1px solid #ddd;
+#footer .footer_info .info_line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 14px;
+  font-size: 12px;
+  color: #666;
+  line-height: 2;
+  letter-spacing: -0.5px;
 }
-#footer .container .bottom_foot{
-  width: 100%;
+
+#footer .footer_info .info_line p {
+  color: #666;
+}
+
+#footer .footer_info .info_line.desc {
+  flex-direction: column;
+  gap: 0;
+  line-height: 1.8;
+}
+
+#footer .footer_info .info_line .comp {
+  color: #000;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* ─── 중간: 카피라이트 ─── */
+#footer .middle_foot {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 28px;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 12px;
+  color: #666;
 }
 
-#footer .container .bottom_foot .menu{
+/* ─── 하단: 약관 + SNS ─── */
+#footer .footer_content.footnote .footer_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  gap: 16px;
+}
+
+/* 왼쪽: 언어 선택 + 약관 메뉴 */
+#footer .footer_content .terms_box {
   display: flex;
   align-items: center;
-  gap: 28px;
-  color: #333;
-  font-size: 11px;
-}
-#footer .container .bottom_foot .menu .language{
-  padding-right: 28px;
-  border-right: 1px solid #cecece;
-  font-size: 11px;
-  color: #333;
-}
-#footer .container .bottom_foot .menu li i{
-  padding-left: 10px;
-}
-#footer .container .bottom_foot .menu li:last-child{
-  color: #0077ff;
-}
-#footer .container .bottom_foot .sns li:nth-child(1){
-font-size: 11px;}
-#footer .container .bottom_foot .sns{
-  display: flex;
-  color: #111;
-  gap: 11px;
 }
 
+#footer .footer_content .terms_box .footer_language {
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+  padding-right: 20px;
+  border-right: 1px solid #cecece;
+  margin-right: 20px;
+  white-space: nowrap;
+}
+
+#footer .footer_content .terms_box .terms_list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 20px;
+}
+
+#footer .footer_content .terms_box .terms_list li a {
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* 드롭다운 (이용약관 / 개인정보처리방침) */
+#footer .footer_content .terms_box .wrap-droplist {
+  position: relative;
+}
+
+#footer .footer_content .terms_box .droplist-button {
+  font-size: 12px;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+#footer .footer_content .terms_box .clause-private .droplist-button {
+  color: #2189FF;
+}
+
+#footer .footer_content .terms_box .droplist {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  list-style: none;
+  padding: 8px 0;
+  min-width: 210px;
+  z-index: 100;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#footer .footer_content .terms_box .wrap-droplist:hover .droplist {
+  display: block;
+}
+
+#footer .footer_content .terms_box .droplist .droplist-item a {
+  display: block;
+  padding: 6px 16px;
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+#footer .footer_content .terms_box .droplist .droplist-item a:hover {
+  background: #f5f5f5;
+}
+
+/* 오른쪽: SNS */
+#footer .footer_content .social_box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+#footer .footer_content .social_box .social_tit {
+  font-size: 12px;
+  color: #333;
+  white-space: nowrap;
+}
+
+#footer .footer_content .social_box .social_list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 12px;
+}
+
+#footer .footer_content .social_box .social_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 20px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Font Awesome 소셜 아이콘 (<i> 태그 사용) */
+#footer .footer_content .social_box .social_item i {
+  font-size: 20px;
+  color: #333;
+}
+
+/* 공유 툴팁 기본 숨김 */
+.tooltip-layer {
+  display: none;
+}
+
+/* 스크린 리더 전용 숨김 */
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── 반응형 ─── */
 @media (max-width: 1024px) {
   #footer .container {
     width: 100%;
@@ -82,24 +212,27 @@ font-size: 11px;}
     padding: 0 20px;
     box-sizing: border-box;
   }
-  #footer .container .top_foot {
-    white-space: normal;
-    word-break: keep-all;
+
+  #footer .footer_info .info_line {
+    flex-direction: column;
+    gap: 0;
     line-height: 2;
   }
-  #footer .container .bottom_foot {
-    flex-direction: column;   /* 메뉴 + sns 세로로 쌓기 */
+
+  #footer .footer_content.footnote .footer_inner {
+    flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
     padding-bottom: 28px;
   }
-  #footer .container .bottom_foot .menu {
-    flex-wrap: wrap;          /* 메뉴 항목 줄바꿈 허용 */
-    gap: 14px;
-  }
-  #footer .container .bottom_foot .sns {
+
+  #footer .footer_content .terms_box {
     flex-wrap: wrap;
     gap: 14px;
+  }
+
+  #footer .footer_content .social_box {
+    flex-wrap: wrap;
+    gap: 10px;
   }
 }
 
@@ -110,38 +243,42 @@ font-size: 11px;}
     padding: 0 16px;
     box-sizing: border-box;
   }
-  #footer .container .top_foot {
-    white-space: normal;
+
+  #footer .footer_info .info_line {
     word-break: keep-all;
     line-height: 1.8;
     letter-spacing: -0.5px;
   }
-  #footer .container .middle_foot {
+
+  #footer .middle_foot {
     padding: 16px 0;
   }
-  #footer .container .bottom_foot {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    padding-top: 16px;
-    padding-bottom: 24px;
-  }
-  #footer .container .bottom_foot .menu {
+
+  #footer .footer_content .terms_box {
     flex-wrap: wrap;
     gap: 10px;
   }
-  #footer .container .bottom_foot .menu .language {
-    width: 100%;             /* 언어 선택은 단독으로 한 줄 차지 */
+
+  #footer .footer_content .terms_box .footer_language {
+    width: 100%;
     padding-right: 0;
     border-right: none;
     border-bottom: 1px solid #cecece;
     padding-bottom: 10px;
+    margin-right: 0;
   }
-  #footer .container .bottom_foot .sns {
+
+  #footer .footer_content .terms_box .terms_list {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  #footer .footer_content .social_box {
     flex-wrap: wrap;
     gap: 12px;
   }
-  #footer .container .bottom_foot .sns li:nth-child(1) {
-    width: 100%;             /* SNS 안내 텍스트 단독으로 한 줄 */
+
+  #footer .footer_content .social_box .social_tit {
+    width: 100%;
   }
 }

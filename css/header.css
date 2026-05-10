@@ -18,7 +18,7 @@ header .container{
 }
 .navbar{
   display: flex;
-  gap: 465px;
+  gap: 400px;
 }
 .navbar .navbtn1{
   display: flex;
