@@ -114,7 +114,7 @@
   margin: 86px 0 100px;
 }
 #model-imgs .box-txt1{
-  width: 747px;
+  width: 770px;
   margin: 0 auto;
 }
 #model-imgs .box-txt1 p{
@@ -130,7 +130,7 @@
 #model-imgs .box-txt2{
   display: flex;
   flex-direction: column;
-  gap: 213px;
+  gap: 170px;
   margin: 30px auto 0;
 }
 #model-imgs .box-txt2 h3{
@@ -169,7 +169,7 @@ width: 100%;
 }
 #function .function-txt h3{
   font-size: 34px;
-  font-weight: 300;
+  font-weight: 500;
 }
 #function .function-txt p{
   font-size: 18px;
@@ -376,8 +376,8 @@ text-align: center;
   #interier .container h1 { font-size: 17px; padding-top: 16px; }
 
   #function .function-txt{margin-top: 10px;}
-  #function .function-txt h3 { font-size: 12px; }
-  #function .function-txt p { font-size: 8px; margin-top: 10px; }
+  #function .function-txt h3 { font-size: 14px; font-weight: 500;}
+  #function .function-txt p { font-size: 12px; margin-top: 10px; }
   #function .function-card2 { margin: 28px 0 50px; }
 
   #bot-banner { height: 25vh; }
